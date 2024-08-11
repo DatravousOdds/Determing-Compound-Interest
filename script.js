@@ -8,7 +8,7 @@ let endOfInvestment = 0.00;
 
 while (true) {
   // prompt for input
-  principalAmount = prompt("What is the principal amount? ");
+  endOfInvestment = prompt("What is the amount you want to reach? ");
   annualInterestRate = prompt("What is the rate? ");
   numberOfYears = prompt("What is the number of years? ");
   compoundedInterest = prompt("What is the number of times interest is compounded per year? ");
@@ -19,22 +19,23 @@ while (true) {
     continue;
   } else {
     // convert input to numerical date
-    principalAmount = parseFloat(principalAmount);
+    endOfInvestment = parseFloat(endOfInvestment);
     annualInterestRate = parseFloat(annualInterestRate);
     numberOfYears = parseInt(numberOfYears);
     compoundedInterest = parseInt(compoundedInterest);
 
     // convert annual interest rate to monthly interest rate
     annualInterestRate = (annualInterestRate / 100);
+    console.log(annualInterestRate)
 
 
-    // calculate compound interest
-    endOfInvestment = principalAmount * Math.pow((1 + annualInterestRate / compoundedInterest), compoundedInterest * numberOfYears);
+    // determine the initial amount needed to reach a specific goal
+    principalAmount = endOfInvestment / Math.pow((1 + annualInterestRate / compoundedInterest), compoundedInterest * numberOfYears);
 
 
 
     // Display results
-    alert(`$${principalAmount} invested at ${annualInterestRate * 100}% for ${numberOfYears} years compounded ${compoundedInterest} times per year is $${endOfInvestment.toFixed(2)}.`);
+    alert(`You will need ${principalAmount.toFixed(2)} in ${numberOfYears} years with an annual interest rate of ${annualInterestRate}.`);
     break;
   }
 }
