@@ -14,7 +14,7 @@ while (true) {
   compoundedInterest = prompt("What is the number of times interest is compounded per year? ");
 
   // check for invalid input
-  if (isNaN(principalAmount) || principalAmount < 0 || isNaN(annualInterestRate) || annualInterestRate < 0 || isNaN(numberOfYears) || numberOfYears < 0) {
+  if (isNaN(endOfInvestment) || endOfInvestment < 0 || isNaN(annualInterestRate) || annualInterestRate < 0 || isNaN(numberOfYears) || numberOfYears < 0) {
     alert("Please enter valid input for all fields");
     continue;
   } else {
@@ -34,8 +34,8 @@ while (true) {
 
 
 
-    // Display results Vaildate errors
-    alert(`You will need ${principalAmount.toFixed(2)} in ${numberOfYears} years with an annual interest rate of ${annualInterestRate}.`);
+    // Display results 
+    alert(`You will need $${principalAmount.toFixed(2)} in ${numberOfYears} years with an annual interest rate of ${(annualInterestRate * 100).toFixed(2)}%.`);
     break;
   }
 }
