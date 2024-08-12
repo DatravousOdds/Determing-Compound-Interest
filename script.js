@@ -34,7 +34,7 @@ while (true) {
 
 
 
-    // Display results
+    // Display results Vaildate errors
     alert(`You will need ${principalAmount.toFixed(2)} in ${numberOfYears} years with an annual interest rate of ${annualInterestRate}.`);
     break;
   }
