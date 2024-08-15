@@ -1,3 +1,30 @@
+const amount = document.getElementById("amount");
+const rate = document.getElementById("rate");
+const years = document.getElementById("years");
+const compoundInterest = document.getElementById("compound");
+const topScreen = document.getElementById("top-screen");
+
+// exact the value of the input
+console.log(amount.value);
+console.log(rate.value);
+console.log(years.value);
+console.log(compoundInterest.value);
+
+amount.addEventListener('change', () => {
+  console.log(amount.value);
+})
+rate.addEventListener('change', () => {
+  console.log(rate.value);
+})
+years.addEventListener('change', () => {
+  console.log(years.value);
+})
+compoundInterest.addEventListener('change', () => {
+  console.log(compoundInterest.value)
+})
+
+if ()
+
 // // Define variables
 // let principalAmount = 0.00;
 // let annualInterestRate = 0.00;
