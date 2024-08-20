@@ -66,6 +66,26 @@ body {
   flex-direction: column;
 }
 
+.clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+button {
+  
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  background-color: #20B2AA;
+  border: transparent;
+  color: var(--font-color);
+  font-weight: 500;
+  font-size: 1rem;
+  
+}
+
 label {
   font-size: 1.5rem;
   padding-bottom: 10px;

@@ -3,35 +3,28 @@ const rate = document.getElementById("rate");
 const years = document.getElementById("years");
 const compoundInterest = document.getElementById("compound");
 const topScreen = document.getElementById("top-screen");
-let endOfInvestment = 0;
-let interestRate = 0;
-let numOfYears = 0;
-let compoundInterestRate = 0;
+let principalAmount = "";
+let annualInterestRate = "";
+let numberOfYears = "";
+let compoundedInterest = "";
+let endOfInvestment = "";
 
 
 
 // exact the value of the input
-endOfInvestment = amount.value;
-interestRate = rate.value;
-numOfYears = years.value;
-compoundInterestRate = compoundInterest.value;
-console.log(endOfInvestment);
-console.log(interestRate);
-console.log(numOfYears);
-console.log(compoundInterestRate);
+amount.addEventListener('input', () => {
+  console.log(amount.value);
+});
+rate.addEventListener('input', () => {
+  console.log(rate.value);
+});
+years.addEventListener('input', () => {
+  console.log(years.value);
+});
+compoundInterest.addEventListener('input', () => {
+  console.log(compoundInterest.value);
+});
 
-amount.addEventListener('change', () => {
-  console.log(amount);
-})
-rate.addEventListener('change', () => {
-  console.log(rate);
-})
-years.addEventListener('change', () => {
-  console.log(years);
-})
-compoundInterest.addEventListener('change', () => {
-  console.log(compoundInterest)
-})
 
 
 // // Define variables
@@ -41,6 +34,19 @@ compoundInterest.addEventListener('change', () => {
 // let compoundedInterest = 1;
 // let endOfInvestment = 0.00;
 
+
+if (amount.value > 0 && rate.value > 0 && years.value > 0 && compoundInterest.value) {
+  endOfInvestment = parseFloat(amount.value);
+  annualInterestRate = parseFloat(rate.value);
+  numberOfYears = parseFloat(years.value);
+  compounded = parseFloat(compoundInterest.value);
+
+  console.log(endOfInvestment);
+  console.log(annualInterestRate);
+  console.log(numberOfYears);
+  console.log(compounded);
+  
+}
 
 // while (true) {
 //   // prompt for input
