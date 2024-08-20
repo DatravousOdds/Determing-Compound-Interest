@@ -3,6 +3,7 @@ const rate = document.getElementById("rate");
 const years = document.getElementById("years");
 const compoundInterest = document.getElementById("compound");
 const topScreen = document.getElementById("top-screen");
+const clearBtn = document.getElementById("clear");
 let principalAmount = "";
 let annualInterestRate = "";
 let numberOfYears = "";
@@ -11,28 +12,19 @@ let endOfInvestment = "";
 
 
 
-// exact the value of the input
-amount.addEventListener('input', () => {
-  console.log(amount.value);
-});
-rate.addEventListener('input', () => {
-  console.log(rate.value);
-});
-years.addEventListener('input', () => {
-  console.log(years.value);
-});
-compoundInterest.addEventListener('input', () => {
-  console.log(compoundInterest.value);
-});
+// submit addEventListener
+clearBtn.addEventListner("click", () => {
+  amount.value = "";
+  rate.value = "";
+  years.value = "";
+  compoundInterest.value = "";
+  topScreen.value = "";
+}
 
 
 
-// // Define variables
-// let principalAmount = 0.00;
-// let annualInterestRate = 0.00;
-// let numberOfYears = 0;
-// let compoundedInterest = 1;
-// let endOfInvestment = 0.00;
+
+
 
 
 if (amount.value > 0 && rate.value > 0 && years.value > 0 && compoundInterest.value) {
@@ -40,12 +32,19 @@ if (amount.value > 0 && rate.value > 0 && years.value > 0 && compoundInterest.va
   annualInterestRate = parseFloat(rate.value);
   numberOfYears = parseFloat(years.value);
   compounded = parseFloat(compoundInterest.value);
-
-  console.log(endOfInvestment);
-  console.log(annualInterestRate);
-  console.log(numberOfYears);
-  console.log(compounded);
+  alert("Please enter vaild input for all fields");
   
+} else {
+  
+  // convert annual interest rate to monthly interest rate
+      annualInterestRate = (annualInterestRate / 100);
+      console.log(annualInterestRate);
+
+  // determine the initial amount needed to reach a specific goal
+      principalAmount = endOfInvestment / Math.pow((1 + annualInterestRate / compoundedInterest), compoundedInterest * numberOfYears);
+
+  // Display the results
+  topScreen.innerHMTL = `The initial amount needed to reach the goal is: $${principalAmount.toFixed(2)}`
 }
 
 // while (true) {
@@ -71,8 +70,7 @@ if (amount.value > 0 && rate.value > 0 && years.value > 0 && compoundInterest.va
 //     console.log(annualInterestRate)
 
 
-//     // determine the initial amount needed to reach a specific goal
-//     principalAmount = endOfInvestment / Math.pow((1 + annualInterestRate / compoundedInterest), compoundedInterest * numberOfYears);
+//     
 
 
 
